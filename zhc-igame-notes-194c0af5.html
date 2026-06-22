@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 站点介绍与知识指引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafaf9;
+            color: #2c3e4f;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", Roboto, system-ui, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .wrapper {
+            max-width: 760px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            padding: 2.5rem 2rem;
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+            color: #1f2a36;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 2rem 0 0.75rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e7ecef;
+            color: #1f2a36;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem 0;
+            color: #2c3e4f;
+        }
+
+        p {
+            margin: 0.8rem 0;
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
+            color: #5b6e7e;
+            margin-top: 0.25rem;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid #b6c9d6;
+            padding-left: 0.75rem;
+        }
+
+        .intro-card {
+            background: #f5f7f9;
+            border-radius: 14px;
+            padding: 1.5rem 1.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .intro-card p {
+            margin: 0.3rem 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.2rem 0;
+        }
+
+        .feature-item {
+            background: #fafbfc;
+            border: 1px solid #eaedf0;
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+        }
+
+        .feature-item h4 {
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            color: #1f2a36;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #4a5b6b;
+        }
+
+        .scenario-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .scenario-list li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e4f;
+        }
+
+        .scenario-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.3rem;
+            color: #8aa1b3;
+            font-weight: bold;
+        }
+
+        .hint-box {
+            background: #f3f6f8;
+            border-radius: 14px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #8aa1b3;
+        }
+
+        .hint-box p {
+            margin: 0.25rem 0;
+            font-size: 0.95rem;
+        }
+
+        .faq-mini {
+            margin: 1.5rem 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e7ecef;
+            padding: 0.8rem 0;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            margin-bottom: 0.15rem;
+            color: #1f2a36;
+        }
+
+        .faq-a {
+            font-size: 0.95rem;
+            color: #4a5b6b;
+        }
+
+        .anchor-link {
+            color: #2c6a8c;
+            text-decoration: none;
+            border-bottom: 1px dotted #b6c9d6;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .anchor-link:hover {
+            color: #1a4d66;
+            border-bottom: 1px solid #1a4d66;
+        }
+
+        .info-footer {
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #eaedf0;
+            font-size: 0.85rem;
+            color: #6a7e8e;
+            text-align: center;
+        }
+
+        .info-footer a {
+            color: #6a7e8e;
+            text-decoration: none;
+            border-bottom: 1px dotted #b6c9d6;
+        }
+
+        .info-footer a:hover {
+            color: #2c3e4f;
+            border-bottom: 1px solid #2c3e4f;
+        }
+
+        /* 响应式 */
+        @media (max-width: 540px) {
+            .wrapper {
+                padding: 1.5rem 1.2rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .intro-card {
+                padding: 1.2rem;
+            }
+
+            .hero-tagline {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+
+            .wrapper {
+                padding: 1.2rem 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>爱游戏</h1>
+        <div class="hero-tagline">一个关于站点性质、信息边界与可信来源的说明页</div>
+
+        <p>
+            当你打开 <a href="https://zhc-igame.com" class="anchor-link">爱游戏</a> 这个站点，或许会好奇它是什么、提供什么、又该如何理解它的内容。这一页试图以平实的叙述，勾勒出站点的轮廓与用途，同时也为你提供一些判断信息可靠性的参考角度。
+        </p>
+
+        <!-- 介绍 & 站点身份 -->
+        <div class="intro-card">
+            <p><strong>站点定位</strong> · 以「爱游戏」为名的个人或小型项目站点，内容方向围绕游戏相关主题展开，包含资讯、记录、随笔或兴趣向整理。并非商业平台，也非官方游戏媒体。</p>
+            <p style="margin-top: 0.6rem;"><strong>运营说明</strong> · 站点由个人维护，更新节奏与内容深度取决于维护者的精力与兴趣。所有信息均应以独立思考判断，不可直接视为权威来源。</p>
+        </div>
+
+        <h2>站点的内容特征</h2>
+        <p>根据现有页面结构与公开信息，<a href="https://zhc-igame.com" class="anchor-link">爱游戏</a> 可能包含以下几类内容，它们共同构成站点的知识底色：</p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h4>游戏笔记与感想</h4>
+                <p>关于特定游戏的玩法、剧情、机制或个人向评价，属于主观经验分享。</p>
+            </div>
+            <div class="feature-item">
+                <h4>资料整理</h4>
+                <p>对游戏背景、设定、更新日志或社区信息的归纳与转述，可能包含二手信息。</p>
+            </div>
+            <div class="feature-item">
+                <h4>索引与链接</h4>
+                <p>指向其他游戏相关资源或工具的汇总，以目录形式呈现。</p>
+            </div>
+            <div class="feature-item">
+                <h4>偶尔的随笔</h4>
+                <p>维护者个人对游戏生态、行业动态或休闲体验的非正式记录。</p>
+            </div>
+        </div>
+
+        <h2>适用场景参考</h2>
+        <p>以下是一些可能适合浏览 <a href="https://zhc-igame.com" class="anchor-link">爱游戏</a> 的时机与需求：</p>
+        <ul class="scenario-list">
+            <li>想快速了解某款游戏的玩家评价或细节，但不想阅读长篇评测文章。</li>
+            <li>寻找特定游戏的中文资料、背景梳理或冷门信息片段。</li>
+            <li>对个人站长的游戏偏好与记录方式感兴趣，作为同类站点的对比样本。</li>
+            <li>需要一些游戏相关的外部链接线索，作为进一步检索的出发点。</li>
+        </ul>
+
+        <h2>关于可信度的一点提示</h2>
+        <div class="hint-box">
+            <p>任何个人站点都存在信息来源单一、时效性滞后或主观偏好的可能。爱游戏也不例外。</p>
+            <p>如果你将站内信息用于重要决策（例如购买游戏、参与活动、引用至正式场合），建议交叉验证来自官方页面、新闻稿或知名社区的第一手信息。</p>
+            <p>对于攻略、数值或机制类内容，最好结合游戏版本号与更新日期再做判断。</p>
+        </div>
+
+        <h2>常见疑问（FAQ 摘要）</h2>
+        <div class="faq-mini">
+            <div class="faq-item">
+                <div class="faq-q">✧ 这个站是官方的吗？</div>
+                <div class="faq-a">不是。它属于个人兴趣站点，与任何游戏公司、发行商、平台无直接隶属关系。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">✧ 站内内容可以转载吗？</div>
+                <div class="faq-a">建议先联系站点维护者获取许可。个人原创内容受著作权保护，转载时应注明原始出处与作者。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">✧ 发现信息错误或死链怎么办？</div>
+                <div class="faq-a">如果站点留有联系方式，可礼貌反馈。个人站点维护精力有限，不一定能及时修正，但你的提醒依然有价值。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">✧ 这个页面本身是什么？</div>
+                <div class="faq-a">是一份针对 <a href="https://zhc-igame.com" class="anchor-link">爱游戏</a> 的介绍与说明页，帮助访客理解站点的性质、内容类型以及如何审慎使用其信息。并非站内全部内容的索引。</div>
+            </div>
+        </div>
+
+        <h2>相关信息</h2>
+        <p style="font-size: 0.95rem; color: #4a5b6b;">
+            如果你对游戏类个人站点的运营方式、内容组织或可信度评估感兴趣，也可以将爱游戏作为一个观察样本。它并不宏大，但或许能反映出个人站点的某些真实面貌：有热情，也有局限。
+        </p>
+        <p style="font-size: 0.95rem; color: #4a5b6b;">
+            最后，无论你带着怎样的目的来访，保持独立思考、多方核实，总是比单信一处更稳妥。
+        </p>
+
+        <div class="info-footer">
+            <span>关于 · <a href="https://zhc-igame.com">爱游戏</a> · 介绍与说明</span>
+            <span style="display: inline-block; margin-left: 0.8rem;">&mdash; 仅供知识参考 &mdash;</span>
+        </div>
+    </div>
+</body>
+</html>
